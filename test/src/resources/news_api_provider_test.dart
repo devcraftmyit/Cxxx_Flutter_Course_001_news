@@ -16,7 +16,18 @@ void main() {
       );
       // call the app with the above
       final ids = await newsApi.fetchTopIds(dynamic);
-      expect (ids, [1, 2, 3, 4]);
+      expect(ids, [1, 2, 3, 4]);
+    },
+  );
+  test(
+    'Testing fetchItem returns an Item Model',
+    () async {
+      final newsApi = NewsItemProvider();
+      newsApi.client = MockClient(
+        (request) async {
+          return Response(json.encode({'id': 123}), 200);
+        },
+      );
     },
   );
 }
