@@ -4,3 +4,8 @@ import 'dart:async';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import '../models/item_model.dart';
+
+class NewsProvider {
+  Database db;
+  init() {}
+}
