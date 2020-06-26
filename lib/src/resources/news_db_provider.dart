@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'dart:async';
@@ -7,5 +8,13 @@ import '../models/item_model.dart';
 
 class NewsProvider {
   Database db;
-  init() {}
+  init() async {
+    Directory documentsDirectory = await getApplicationDocumentsDirectory();
+    final path = join(documentsDirectory.path, "items.db");
+    db = await openDatabase(
+      path,
+      version: 1,
+      onCreate: (Database newDb, int version) {},
+    );
+  }
 }
