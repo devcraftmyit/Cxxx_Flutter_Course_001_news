@@ -14,7 +14,9 @@ class NewsProvider {
     db = await openDatabase(
       path,
       version: 1,
-      onCreate: (Database newDb, int version) {},
+      onCreate: (Database newDb, int version) {
+        newDb.execute(""" CREATE TABLE Items () """);
+      },
     );
   }
 }
