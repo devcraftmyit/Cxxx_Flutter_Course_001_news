@@ -6,7 +6,7 @@ import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import '../models/item_model.dart';
 
-class NewsProvider {
+class NewsDbProvider {
   Database db;
   init() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
@@ -32,5 +32,17 @@ class NewsProvider {
         ) """);
       },
     );
+  }
+
+  fetchItem(int id) async {
+    final maps = await db.query(
+      "Items",
+      columns: null,
+      where: "id = ?",
+      whereArgs: [id],
+    )
+  if (maps.length > 0 ) {
+
+  } return null;
   }
 }
