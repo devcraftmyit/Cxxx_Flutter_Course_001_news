@@ -40,7 +40,7 @@ class NewsDbProvider {
       columns: null,
       where: "id = ?",
       whereArgs: [id],
-    )
+    );
   if (maps.length > 0 ) {
 
   } return null;
