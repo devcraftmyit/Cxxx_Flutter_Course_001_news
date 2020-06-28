@@ -1,7 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'dart:async';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import '../models/item_model.dart';
@@ -41,8 +39,7 @@ class NewsDbProvider {
       where: "id = ?",
       whereArgs: [id],
     );
-  if (maps.length > 0 ) {
-
-  } return null;
+    if (maps.length > 0) {}
+    return ItemModel.fromDb(maps.first);
   }
 }
