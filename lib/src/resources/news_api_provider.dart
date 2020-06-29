@@ -2,7 +2,7 @@ import 'package:http/http.dart' show Client;
 import 'dart:convert';
 import '../models/item_model.dart';
 
-class NewsItemProvider {
+class NewsApiProvider {
   Client client = Client();
   final root = 'https://hacker-news.firebaseio.com/v0';
 

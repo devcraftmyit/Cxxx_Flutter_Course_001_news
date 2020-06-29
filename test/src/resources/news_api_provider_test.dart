@@ -8,7 +8,7 @@ void main() {
   test(
     'FetchTopIds returns a list of  [ ids ]',
     () async {
-      final newsApi = NewsItemProvider();
+      final newsApi = NewsApiProvider();
       newsApi.client = MockClient(
         (request) async {
           return Response(json.encode([1, 2, 3, 4]), 200);
@@ -22,7 +22,7 @@ void main() {
   test(
     'Testing fetchItem returns an Item Model',
     () async {
-      final newsApi = NewsItemProvider();
+      final newsApi = NewsApiProvider();
       newsApi.client = MockClient(
         (request) async {
           return Response(json.encode({'id': 123}), 200);
