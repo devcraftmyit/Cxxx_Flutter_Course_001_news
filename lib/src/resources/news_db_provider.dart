@@ -42,4 +42,8 @@ class NewsDbProvider {
     if (maps.length > 0) {}
     return ItemModel.fromDb(maps.first);
   }
+
+  addItem(ItemModel item) {
+    db.insert("Items", item.toMapForDb());
+  }
 }
