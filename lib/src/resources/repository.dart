@@ -6,7 +6,7 @@ import '../models/item_model.dart';
 class Repository {
   NewsApiProvider apiProvider = NewsApiProvider();
   NewsDbProvider dbProvider = NewsDbProvider();
-  
+
   Future<List<int>> fetchTopItems() {
     return apiProvider.fetchTopIds(dynamic);
   }
@@ -19,8 +19,5 @@ class Repository {
     item = await apiProvider.fetchItem(id);
     dbProvider.addItem(item);
     return item;
-    
   }
-
-  
-  }
+}
