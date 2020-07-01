@@ -7,21 +7,25 @@ void main() {
 }
 
 class PowerGrid {
-  List<NuclearPowerPlant> connectedPlants = [];
+  List<PowerPlant> connectedPlants = [];
 
-  addPlant(NuclearPowerPlant plant) {
+  addPlant(PowerPlant plant) {
     plant.turnOn();
     connectedPlants.add(plant);
   }
 }
 
-class NuclearPowerPlant {
+abstract class PowerPlant {
+  turnOn();
+}
+
+class NuclearPowerPlant implements PowerPlant {
   turnOn() {
     print('power plant is turned on');
   }
 }
 
-class SolarPlant {
+class SolarPlant implements PowerPlant {
   turnOn() {
     print('Solar plant turned on');
   }
