@@ -19,6 +19,10 @@ abstract class PowerPlant {
   turnOn(String duration);
 }
 
+abstract class Abuilding {
+  int height;
+}
+
 class NuclearPowerPlant implements PowerPlant {
   int power = 200;
   turnOn(String hrs) {
@@ -26,8 +30,9 @@ class NuclearPowerPlant implements PowerPlant {
   }
 }
 
-class SolarPlant implements PowerPlant {
+class SolarPlant implements PowerPlant, Abuilding {
   int power = 300;
+  int height = 100;
   turnOn(String mins) {
     print('Solar plant turned on Power at $power watts');
   }
