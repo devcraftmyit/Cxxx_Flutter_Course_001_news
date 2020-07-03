@@ -8,25 +8,27 @@ void main() {
 
 class PowerGrid {
   List<PowerPlant> connectedPlants = [];
-
   addPlant(PowerPlant plant) {
-    plant.turnOn();
+    plant.turnOn('5 hours');
     connectedPlants.add(plant);
   }
 }
 
 abstract class PowerPlant {
-  turnOn();
+  int power;
+  turnOn(String duration);
 }
 
 class NuclearPowerPlant implements PowerPlant {
-  turnOn() {
-    print('power plant is turned on');
+  int power = 200;
+  turnOn(String hrs) {
+    print('Nuclear power plant is turned on Power at $power watts');
   }
 }
 
 class SolarPlant implements PowerPlant {
-  turnOn() {
-    print('Solar plant turned on');
+  int power = 300;
+  turnOn(String mins) {
+    print('Solar plant turned on Power at $power watts');
   }
 }
