@@ -3,8 +3,9 @@ import 'package:path/path.dart';
 import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import '../models/item_model.dart';
+import 'repository.dart';
 
-class NewsDbProvider {
+class NewsDbProvider implements Source{
   Database db;
   init() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
@@ -30,6 +31,10 @@ class NewsDbProvider {
         ) """);
       },
     );
+  }
+  // TODO code a fetchTopIds and deal with cache if need be? //
+  Future <List<int>> fetchTopIds (){
+    return null;
   }
 
  Future <ItemModel> fetchItem(int id) async {
