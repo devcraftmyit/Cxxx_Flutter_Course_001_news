@@ -5,7 +5,7 @@ import 'package:path_provider/path_provider.dart';
 import '../models/item_model.dart';
 import 'repository.dart';
 
-class NewsDbProvider implements Source{
+class NewsDbProvider implements Source,Cache{
   Database db;
   init() async {
     Directory documentsDirectory = await getApplicationDocumentsDirectory();
@@ -49,7 +49,7 @@ class NewsDbProvider implements Source{
     } return null;
   }
 
-  Future addItem(ItemModel item) async {
-    db.insert("Items", item.toMapForDb());
+  Future<int> addItem(ItemModel item) async {
+    return db.insert("Items", item.toMapForDb());
   }
 }

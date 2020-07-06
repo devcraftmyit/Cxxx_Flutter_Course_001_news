@@ -27,6 +27,6 @@ abstract class Source {
   Future<ItemModel> fetchItem(int id);
 }
 
-class Cache {
-
+abstract class Cache {
+  Future<int> addItem(ItemModel item);        
 }
