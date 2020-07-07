@@ -15,7 +15,7 @@ void main() {
         },
       );
       // call the app with the above
-      final ids = await newsApi.fetchTopIds(dynamic);
+      final ids = await newsApi.fetchTopIds();
       expect(ids, [1, 2, 3, 4]);
     },
   );
