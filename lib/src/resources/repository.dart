@@ -12,9 +12,9 @@ class Repository {
   List<Cache> caches = [
     newsDbProvider,
   ];
-
+ // TODO code a fetchTopIds and deal with cache if need be? //
   Future<List<int>> fetchTopItems() {
-    return apiProvider.fetchTopIds();
+    return sources[1].fetchTopIds();
   }
 
   Future<ItemModel> fetchItem(int id) async {
