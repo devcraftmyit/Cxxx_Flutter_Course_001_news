@@ -2,7 +2,7 @@ import 'package:http/http.dart' show Client;
 import 'dart:convert';
 import '../models/item_model.dart';
 import 'repository.dart';
-
+  
 
 class NewsApiProvider implements Source{
   Client client = Client();
