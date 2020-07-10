@@ -13,7 +13,7 @@ class Repository {
     newsDbProvider,
   ];
  // TODO code a fetchTopIds and deal with cache if need be? //
-  Future<List<int>> fetchTopItems() {
+  Future<List<int>> fetchTopIds() {
     return sources[1].fetchTopIds();
   }
 
