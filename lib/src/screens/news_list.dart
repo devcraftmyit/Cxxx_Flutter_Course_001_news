@@ -17,14 +17,14 @@ class NewsList extends StatelessWidget {
   Widget buildList(StoriesBloc bloc) {
     return StreamBuilder(
       stream: bloc.topIds,
-      builder: (context, snapshot) {
+      builder: (context, AsyncSnapshot<List<int>> snapshot) {
         if (!snapshot.hasData) {
-          return Text('Still waiting for the topIds v3');
+          return Text('Still waiting for the topIds v4');
         }
         return ListView.builder(
             itemCount: snapshot.data.length,
             itemBuilder: (context, int index) {
-              return Text (snapshot.data[index]);
+              return Text ('${snapshot.data[index]}');
             });
       },
     );
