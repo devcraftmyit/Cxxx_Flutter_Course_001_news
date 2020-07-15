@@ -5,7 +5,7 @@ import '../blocks/stories_provider.dart';
 class NewsList extends StatelessWidget {
   Widget build(context) {
     final bloc = StoriesProvider.of(context);
-    bloc.fetchTopIds(); 
+    bloc.fetchTopIds();
     return Scaffold(
       appBar: AppBar(
         title: Text('News'),
@@ -19,12 +19,14 @@ class NewsList extends StatelessWidget {
       stream: bloc.topIds,
       builder: (context, AsyncSnapshot<List<int>> snapshot) {
         if (!snapshot.hasData) {
-          return Text('Still waiting for the topIds v4');
+          return Center(
+            child: CircularProgressIndicator(),
+          );
         }
         return ListView.builder(
             itemCount: snapshot.data.length,
             itemBuilder: (context, int index) {
-              return Text ('${snapshot.data[index]}');
+              return Text('${snapshot.data[index]}');
             });
       },
     );
