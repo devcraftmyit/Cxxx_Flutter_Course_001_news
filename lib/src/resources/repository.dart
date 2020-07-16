@@ -18,8 +18,8 @@ class Repository {
   }
 
   Future<ItemModel> fetchItem(int id) async {
-    Source source;
     ItemModel item;
+     Source source;
     for (source in sources){
       item = await source.fetchItem(id);
         if (item != null)
