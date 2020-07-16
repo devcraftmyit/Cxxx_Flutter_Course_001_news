@@ -5,7 +5,9 @@ import '../models/item_model.dart';
 class StoriesBloc {
   final _repository = Repository();
   final _topIds = PublishSubject<List<int>>();
-
+  final _items = BehaviorSubject<int>();
+  Function(int) get fetchItem => _items.sink.add;
+  
   Observable<List<int>> get topIds => _topIds.stream;
   
   fetchTopIds() async {
